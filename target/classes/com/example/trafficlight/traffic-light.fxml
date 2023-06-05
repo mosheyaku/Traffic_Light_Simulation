@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trafficlight.TrafficLightController">
+   <children>
+      <Pane layoutX="218.0" layoutY="22.0" prefHeight="139.0" prefWidth="65.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="146.0" layoutX="3.0" stroke="BLACK" strokeType="INSIDE" width="58.0" />
+            <Circle fx:id="carUpperGreenLight" fill="GREY" layoutX="32.0" layoutY="55.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="carUpperRedLight" fill="GREY" layoutX="33.0" layoutY="22.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle fx:id="peopleUpperRedLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+            <Rectangle fx:id="peopleUpperGreenLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="367.0" layoutY="172.0" prefHeight="139.0" prefWidth="65.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="146.0" layoutX="3.0" stroke="BLACK" strokeType="INSIDE" width="58.0" />
+            <Circle fx:id="carRightGreenLight" fill="GREY" layoutX="32.0" layoutY="55.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="carRightRedLight" fill="GREY" layoutX="33.0" layoutY="22.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle fx:id="peopleRightRedLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+            <Rectangle fx:id="peopleRightGreenLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="218.0" layoutY="327.0" prefHeight="139.0" prefWidth="65.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="146.0" layoutX="3.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="58.0" />
+            <Circle fx:id="carLowerGreenLight" fill="GREY" layoutX="32.0" layoutY="55.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="carLowerRedLight" fill="GREY" layoutX="33.0" layoutY="22.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle fx:id="peopleLowerRedLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+            <Rectangle fx:id="peopleLowerGreenLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="56.0" layoutY="172.0" prefHeight="139.0" prefWidth="65.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="146.0" layoutX="3.0" stroke="BLACK" strokeType="INSIDE" width="58.0" />
+            <Circle fx:id="carLeftGreenLight" fill="GREY" layoutX="32.0" layoutY="55.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="carLeftRedLight" fill="GREY" layoutX="33.0" layoutY="22.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle fx:id="peopleLeftRedLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+            <Rectangle fx:id="peopleLeftGreenLight" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="25.0" layoutX="20.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" width="25.0" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
