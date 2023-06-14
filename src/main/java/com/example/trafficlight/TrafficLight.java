@@ -1,35 +1,36 @@
 package com.example.trafficlight;
 
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
-public class TrafficLight{
+public class TrafficLight {
 
-    private Circle peopleRedLight;
-    private Circle peopleGreenLight;
+    private Rectangle peopleRedLight;
+    private Rectangle peopleGreenLight;
     private Circle carRedLight;
     private Circle carGreenLight;
 
 
-    public TrafficLight(Circle peopleRedLight, Circle peopleGreenLight, Circle carRedLight, Circle carGreenLight){
-        this.peopleRedLight=peopleRedLight;
-        this.peopleGreenLight=peopleGreenLight;
-        this.carRedLight=carRedLight;
-        this.carGreenLight=carGreenLight;
+    public TrafficLight(Circle carRedLight, Circle carGreenLight, Rectangle peopleRedLight, Rectangle peopleGreenLight) {
+        this.peopleRedLight = peopleRedLight;
+        this.peopleGreenLight = peopleGreenLight;
+        this.carRedLight = carRedLight;
+        this.carGreenLight = carGreenLight;
     }
 
-    public Circle getPeopleRedLight() {
+    public Rectangle getPeopleRedLight() {
         return peopleRedLight;
     }
 
-    public void setPeopleRedLight(Circle peopleRedLight) {
+    public void setPeopleRedLight(Rectangle peopleRedLight) {
         this.peopleRedLight = peopleRedLight;
     }
 
-    public Circle getPeopleGreenLight() {
+    public Rectangle getPeopleGreenLight() {
         return peopleGreenLight;
     }
 
-    public void setPeopleGreenLight(Circle peopleGreenLight) {
+    public void setPeopleGreenLight(Rectangle peopleGreenLight) {
         this.peopleGreenLight = peopleGreenLight;
     }
 
