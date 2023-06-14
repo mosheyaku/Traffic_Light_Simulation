@@ -54,10 +54,15 @@ public class TrafficLightController {
     @FXML
     private Rectangle peopleUpperRedLight;
 
+    private TrafficLight upperLight;
+    private TrafficLight lowerLight;
+    private TrafficLight rightLight;
+    private TrafficLight leftLight;
 
-
-
-    public void initialize(){
-
+    public void initialize() {
+        upperLight = new TrafficLight(carUpperRedLight, carUpperGreenLight, peopleUpperRedLight, peopleUpperGreenLight);
+        lowerLight = new TrafficLight(carLowerRedLight, carLowerGreenLight, peopleLowerRedLight, peopleLowerGreenLight);
+        rightLight = new TrafficLight(carRightRedLight, carRightGreenLight, peopleRightRedLight, peopleRightGreenLight);
+        leftLight = new TrafficLight(carLeftRedLight, carLeftGreenLight, peopleLeftRedLight, peopleLeftGreenLight);
     }
 }
