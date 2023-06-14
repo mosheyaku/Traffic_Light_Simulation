@@ -14,55 +14,61 @@ public class Monitor {
     public synchronized void displayLights(TrafficLight upperLight, TrafficLight lowerLight, TrafficLight rightLight, TrafficLight leftLight) {
         try {
             while (true) {
-                parallelLightsGreenForCars(rightLight, leftLight);
-                parallelLightsGreenForPeople(upperLight, lowerLight);
-
-                parallelLightsGreenForCars(upperLight, lowerLight);
-                parallelLightsGreenForPeople(rightLight, leftLight);
-
+                setTrafficLights(rightLight, leftLight, upperLight, lowerLight);
+                setTrafficLights(upperLight, lowerLight, rightLight, leftLight);
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
+    private void setTrafficLights(TrafficLight light1, TrafficLight light2, TrafficLight light3, TrafficLight light4) throws InterruptedException {
+        parallelLightsGreenForCars(light1, light2);
+        parallelLightsGreenForPeople(light3, light4);
+    }
+
+    private void carRedLight(TrafficLight light) {
+        light.getCarRedLight().setFill(Color.RED);
+        light.getCarGreenLight().setFill(Color.GREY);
+        light.getPeopleRedLight().setFill(Color.GREY);
+    }
+
     private void parallelLightsGreenForPeople(TrafficLight light1, TrafficLight light2) throws InterruptedException {
-
-        light1.getCarRedLight().setFill(Color.RED);
-        light1.getCarGreenLight().setFill(Color.GREY);
-
-        light2.getCarRedLight().setFill(Color.RED);
-        light2.getCarGreenLight().setFill(Color.GREY);
-
-        light1.getPeopleRedLight().setFill(Color.GREY);
-        light2.getPeopleRedLight().setFill(Color.GREY);
-
+        carRedLight(light1);
+        carRedLight(light2);
         peopleGreenLightFlashing(light1, light2);
     }
 
-    private void parallelLightsGreenForCars(TrafficLight light1, TrafficLight light2){
-        light1.getCarRedLight().setFill(Color.GREY);
-        light1.getCarGreenLight().setFill(Color.GREEN);
+    private void parallelLightsGreenForCars(TrafficLight light1, TrafficLight light2) {
+        peopleRedLight(light1);
+        peopleRedLight(light2);
+    }
 
-        light1.getPeopleRedLight().setFill(Color.RED);
-        light1.getPeopleGreenLight().setFill(Color.GREY);
+    private void peopleRedLight(TrafficLight light) {
+        light.getCarRedLight().setFill(Color.GREY);
+        light.getCarGreenLight().setFill(Color.GREEN);
 
-        light2.getCarRedLight().setFill(Color.GREY);
-        light2.getCarGreenLight().setFill(Color.GREEN);
-
-        light2.getPeopleRedLight().setFill(Color.RED);
-        light2.getPeopleGreenLight().setFill(Color.GREY);
+        light.getPeopleRedLight().setFill(Color.RED);
+        light.getPeopleGreenLight().setFill(Color.GREY);
     }
 
 
     private void peopleGreenLightFlashing(TrafficLight light1, TrafficLight light2) throws InterruptedException {
         for (int j = 0; j < FLASHING_LIGHT_NUMBER; j++) {
-            light1.getPeopleGreenLight().setFill(Color.GREEN);
-            light2.getPeopleGreenLight().setFill(Color.GREEN);
+            colorPeopleGreenLightToGreen(light1, light2);
             sleep(SLEEP_TIME);
-            light1.getPeopleGreenLight().setFill(Color.GREY);
-            light2.getPeopleGreenLight().setFill(Color.GREY);
+            colorPeopleGreenLightToGrey(light1, light2);
             sleep(SLEEP_TIME);
         }
+    }
+
+    private void colorPeopleGreenLightToGreen(TrafficLight light1, TrafficLight light2) {
+        light1.getPeopleGreenLight().setFill(Color.GREEN);
+        light2.getPeopleGreenLight().setFill(Color.GREEN);
+    }
+
+    private void colorPeopleGreenLightToGrey(TrafficLight light1, TrafficLight light2) {
+        light1.getPeopleGreenLight().setFill(Color.GREY);
+        light2.getPeopleGreenLight().setFill(Color.GREY);
     }
 }
