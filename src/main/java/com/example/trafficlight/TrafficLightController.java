@@ -58,11 +58,16 @@ public class TrafficLightController {
     private TrafficLight lowerLight;
     private TrafficLight rightLight;
     private TrafficLight leftLight;
+    private Monitor monitor;
+
 
     public void initialize() {
         upperLight = new TrafficLight(carUpperRedLight, carUpperGreenLight, peopleUpperRedLight, peopleUpperGreenLight);
         lowerLight = new TrafficLight(carLowerRedLight, carLowerGreenLight, peopleLowerRedLight, peopleLowerGreenLight);
         rightLight = new TrafficLight(carRightRedLight, carRightGreenLight, peopleRightRedLight, peopleRightGreenLight);
         leftLight = new TrafficLight(carLeftRedLight, carLeftGreenLight, peopleLeftRedLight, peopleLeftGreenLight);
+        monitor = new Monitor();
+        TrafficControl runLights = new TrafficControl(upperLight, lowerLight, rightLight, leftLight, monitor);
+        runLights.start();
     }
 }
